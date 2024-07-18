@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5975ebb0b11ddf33cf5cd7bf22ca0a5a",
+    "content-hash": "52178f38b2b305130a3bc9ee4d6456a0",
     "packages": [
         {
             "name": "mpdf/mpdf",
@@ -754,16 +754,16 @@
         },
         {
             "name": "tecsiaron/ublrenderer",
-            "version": "0.0.1-alpha",
+            "version": "dev-main",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TecsiAron/ublrenderer.git",
-                "reference": "9f7f36197a795a26471235544a841092a1a3b493"
+                "reference": "5da69ce48f019157cba27b06f43e2cfcfec2820f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TecsiAron/ublrenderer/zipball/9f7f36197a795a26471235544a841092a1a3b493",
-                "reference": "9f7f36197a795a26471235544a841092a1a3b493",
+                "url": "https://api.github.com/repos/TecsiAron/ublrenderer/zipball/5da69ce48f019157cba27b06f43e2cfcfec2820f",
+                "reference": "5da69ce48f019157cba27b06f43e2cfcfec2820f",
                 "shasum": ""
             },
             "require": {
@@ -778,6 +778,7 @@
             "require-dev": {
                 "phpunit/phpunit": "^11.2"
             },
+            "default-branch": true,
             "bin": [
                 "bin/ubl2html.php"
             ],
@@ -797,12 +798,12 @@
                     "email": "aron@edituraedu.ro"
                 }
             ],
-            "description": "UBL 2 HTML and PDF renderer (PHP)",
+            "description": "UBL 2 HTML renderer (PHP)",
             "support": {
                 "issues": "https://github.com/TecsiAron/ublrenderer/issues",
-                "source": "https://github.com/TecsiAron/ublrenderer/tree/0.0.1-alpha"
+                "source": "https://github.com/TecsiAron/ublrenderer/tree/main"
             },
-            "time": "2024-07-18T10:26:02+00:00"
+            "time": "2024-07-18T12:32:23+00:00"
         },
         {
             "name": "twig/twig",
@@ -2458,7 +2459,7 @@
     "aliases": [],
     "minimum-stability": "alpha",
     "stability-flags": {
-        "tecsiaron/ublrenderer": 15
+        "tecsiaron/ublrenderer": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

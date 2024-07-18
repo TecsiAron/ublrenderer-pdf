@@ -19,7 +19,10 @@
     ],
     "minimum-stability": "alpha",
     "require": {
-        "tecsiaron/ublrenderer": "^0.0.1@alpha",
+        "tecsiaron/ublrenderer": "@dev",
         "mpdf/mpdf": "^8.2"
-    }
+    },
+    "bin": [
+        "bin/ubl2pdf.php"
+    ]
 }
