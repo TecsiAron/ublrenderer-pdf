@@ -8,7 +8,7 @@
     "license": "Apache-2.0",
     "autoload": {
         "psr-4": {
-            "Tecsiaron\\UblrendererPdf\\": "src/"
+            "EdituraEDU\\UBLRenderer\\PDF\\": "src/"
         }
     },
     "authors": [
@@ -19,6 +19,7 @@
     ],
     "minimum-stability": "alpha",
     "require": {
-        "tecsiaron/ublrenderer": "^0.0.1@alpha"
+        "tecsiaron/ublrenderer": "^0.0.1@alpha",
+        "mpdf/mpdf": "^8.2"
     }
 }
