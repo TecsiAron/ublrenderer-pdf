@@ -32,23 +32,31 @@ class PDFWriter extends InvoiceWriter
     private PDFParams $Params;
     private array $Warnings = [];
 
+    private bool $MemoryOnly;
+
+    public ?string $LastPDF=null;
+
     /**
      * If path is null or is a directory InvoiceWriter::NormalizePath will be used to generate the path
      * @see InvoiceWriter::NormalizePath
      * @param string|null $path if null dirname(__FILE__)."/../output/<invoice_id>.pdf will be used"
      */
-    public function __construct(PDFParams $params, ?string $path=null, string $OriginalXML, ?string $signature = null)
+    public function __construct(PDFParams $params,  ?string $path, string $OriginalXML, ?string $signature = null, bool $memoryOnly=false)
     {
         $this->Params = $params;
         $this->Path = $path;
         $this->OriginalXML = $OriginalXML;
         $this->Signature = $signature;
+        $this->MemoryOnly = $memoryOnly;
     }
 
     public function WriteContent(string $hmlContent, ParsedUBLInvoice $invoice): void
     {
         $this->Warnings=[];
-        $this->Path=$this->NormalizePath($this->Path, $invoice, "pdf");
+        if(!$this->MemoryOnly)
+        {
+            $this->Path = $this->NormalizePath($this->Path, $invoice, "pdf");
+        }
         $assocFiles=[];
         if($this->Params->IncludeOriginalXML)
         {
@@ -78,8 +86,13 @@ class PDFWriter extends InvoiceWriter
         {
             $mpdf->SetAssociatedFiles($assocFiles);
         }
-        $mpdf->OutputFile($this->Path);
+        $this->LastPDF=$mpdf->Output();
         $this->CleanAttachments($assocFiles);
+        if($this->MemoryOnly)
+        {
+            return;
+        }
+        file_put_contents($this->Path, $this->LastPDF);
     }
 
     public function GenerateIncludeFile(string $content, string $name):array|false
