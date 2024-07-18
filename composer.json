@@ -1,0 +1,24 @@
+{
+    "name": "tecsiaron/ublrenderer-pdf",
+    "description": "UBL2PDF renderer (php)",
+    "type": "library",
+    "require-dev": {
+        "phpunit/phpunit": "^11.2"
+    },
+    "license": "Apache-2.0",
+    "autoload": {
+        "psr-4": {
+            "Tecsiaron\\UblrendererPdf\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Tecsi Aron",
+            "email": "aron@edituraedu.ro"
+        }
+    ],
+    "minimum-stability": "alpha",
+    "require": {
+        "tecsiaron/ublrenderer": "^0.0.1@alpha"
+    }
+}
