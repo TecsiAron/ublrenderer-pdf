@@ -22,6 +22,7 @@ use EdituraEDU\UBLRenderer\InvoiceWriter;
 use EdituraEDU\UBLRenderer\UBLObjectDefinitions\ParsedUBLInvoice;
 use EdituraEDU\UBLRenderer\UBLRendererWarning;
 use Mpdf\Mpdf;
+use Mpdf\Output\Destination;
 
 class PDFWriter extends InvoiceWriter
 {
@@ -86,7 +87,7 @@ class PDFWriter extends InvoiceWriter
         {
             $mpdf->SetAssociatedFiles($assocFiles);
         }
-        $this->LastPDF=$mpdf->Output();
+        $this->LastPDF=$mpdf->Output('', Destination::STRING_RETURN);
         $this->CleanAttachments($assocFiles);
         if($this->MemoryOnly)
         {
