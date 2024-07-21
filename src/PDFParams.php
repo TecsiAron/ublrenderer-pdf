@@ -50,8 +50,8 @@ class PDFParams
     {
         $params = new PDFParams();
         $params->Title = "Fact. ".$invoice->ID;
-        $params->Author=$invoice->AccountingSupplierParty->Name;
-        $params->Creator=$invoice->AccountingSupplierParty->Name;
+        $params->Author=$invoice->AccountingSupplierParty->GetName();
+        $params->Creator=$invoice->AccountingSupplierParty->GetName();
         $params->Subject="Factura electronica";
         $params->Keywords="Factura electronica, ".$invoice->ID;
         return $params;
